@@ -8,10 +8,10 @@ from sklearn.feature_selection import SelectKBest, f_classif
 import tensorflow as tf
 from tensorflow import keras
 
-df_pos_train = pd.read_csv('C:/Users/humbe/Desktop/Adqui/Proyecto/Dataset_positivo_Train.csv', header=None)
-df_pos_test = pd.read_csv('C:/Users/humbe/Desktop/Adqui/Proyecto/Dataset_positivo_Test.csv', header=None)
-df_neg_train = pd.read_csv('C:/Users/humbe/Desktop/Adqui/Proyecto/Dataset_negativo_Train.csv', header=None)
-df_neg_test = pd.read_csv('C:/Users/humbe/Desktop/Adqui/Proyecto/Dataset_negativo_Test.csv', header=None)
+df_pos_train = pd.read_csv('data/Dataset_positivo_Train.csv', header=None)
+df_pos_test = pd.read_csv('data/Dataset_positivo_Test.csv', header=None)
+df_neg_train = pd.read_csv('data/Dataset_negativo_Train.csv', header=None)
+df_neg_test = pd.read_csv('data/Dataset_negativo_Test.csv', header=None)
 
 df_pos_train['label'] = 1
 df_pos_test['label'] = 1
@@ -31,12 +31,12 @@ selector.fit(X_all_scaled, y_all)
 selected_columns = selector.get_support(indices=True)
 print(f"Columnas seleccionadas por SelectKBest (índices): {selected_columns}")
 
-model = keras.models.load_model(r'c:\Users\humbe\modelo_f1_91.h5')
+model = keras.models.load_model('models/modelo_f1_92.h5')
 
-Test_bien = pd.read_csv('C:/Users/humbe/Desktop/Adqui/Proyecto/Dataset_positivo_Test.csv', header=None).values
-Test_mal = pd.read_csv('C:/Users/humbe/Desktop/Adqui/Proyecto/Dataset_negativo_Test.csv', header=None).values
-Train_bien = pd.read_csv('C:/Users/humbe/Desktop/Adqui/Proyecto/Dataset_positivo_Train.csv', header=None).values
-Train_mal = pd.read_csv('C:/Users/humbe/Desktop/Adqui/Proyecto/Dataset_negativo_Train.csv', header=None).values
+Test_bien = pd.read_csv('data/Dataset_positivo_Test.csv', header=None).values
+Test_mal = pd.read_csv('data/Dataset_negativo_Test.csv', header=None).values
+Train_bien = pd.read_csv('data/Dataset_positivo_Train.csv', header=None).values
+Train_mal = pd.read_csv('data/Dataset_negativo_Train.csv', header=None).values
 
 X_train = np.vstack((Train_mal, Train_bien))
 y_train = np.concatenate((np.zeros(len(Train_mal)), np.ones(len(Train_bien))))
