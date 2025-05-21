@@ -8,10 +8,12 @@ import tensorflow as tf
 from tensorflow import keras
 import matplotlib.pyplot as plt
 
-df_pos_train = pd.read_csv('C:/Users/humbe/Desktop/Adqui/Proyecto/Dataset_positivo_Train.csv', header=None)
-df_pos_test = pd.read_csv('C:/Users/humbe/Desktop/Adqui/Proyecto/Dataset_positivo_Test.csv', header=None)
-df_neg_train = pd.read_csv('C:/Users/humbe/Desktop/Adqui/Proyecto/Dataset_negativo_Train.csv', header=None)
-df_neg_test = pd.read_csv('C:/Users/humbe/Desktop/Adqui/Proyecto/Dataset_negativo_Test.csv', header=None)
+df_pos_train = pd.read_csv('data/Dataset_positivo_Train.csv', header=None)
+df_pos_test = pd.read_csv('data/Dataset_positivo_Test.csv', header=None)
+df_neg_train = pd.read_csv('data/Dataset_negativo_Train.csv', header=None)
+df_neg_test = pd.read_csv('data/Dataset_negativo_Test.csv', header=None)
+
+k = 8 
 
 df_pos_train['label'] = 1
 df_pos_test['label'] = 1
@@ -61,9 +63,9 @@ print("F1-score:", f1)
 print("\nMatriz de confusión:\n", confusion_matrix(y_test, y_pred))
 print("\nReporte de clasificación:\n", classification_report(y_test, y_pred, zero_division=0))
 
-if f1 >= 0.91:
-    model.save('modelo_f1_92.h5')
-    print("Modelo guardado como modelo_f1_91.h5")
+if f1 >= 0.92:
+    model.save('models/modelo_f1_92.h5')
+    print("Modelo guardado como modelo_f1_92.h5")
 
 plt.figure(figsize=(12,5))
 plt.subplot(1,2,1)
