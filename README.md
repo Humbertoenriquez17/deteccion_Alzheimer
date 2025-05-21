@@ -10,3 +10,9 @@ Objetivos
 - Comparar métricas de rendimiento (precisión, recall, F1-score, etc.) con resultados publicados en la literatura.
 
 - Desarrollar un modelo que pueda integrarse en futuras herramientas de diagnóstico.
+
+Para poder instalar las librerias necesarias, ejecutar la siguiente linea desde la terminal de Python:
+- pip install -r requirements.txt
+
+
+
