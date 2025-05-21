@@ -2,11 +2,11 @@ clc; clear all; close all;
 
 global X_train y_train X_sample y_sample y_min y_max resultado_texto;
 
-data_negativo_train = csvread('Dataset_negativo_Train.csv', 0, 0);
-data_positivo_train = csvread('Dataset_positivo_Train.csv', 0, 0);
+data_negativo_train = csvread('../data/Dataset_negativo_Train.csv', 0, 0);
+data_positivo_train = csvread('../data/Dataset_positivo_Train.csv', 0, 0);
 
-data_negativo_test = csvread('Dataset_negativo_Test.csv', 0, 0);
-data_positivo_test = csvread('Dataset_positivo_Test.csv', 0, 0);
+data_negativo_test = csvread('../data/Dataset_negativo_Test.csv', 0, 0);
+data_positivo_test = csvread('../data/Dataset_positivo_Test.csv', 0, 0);
 
 X_train_negativo = data_negativo_train(1:532, :);
 X_train_positivo = data_positivo_train(1:532, :);
