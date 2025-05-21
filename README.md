@@ -11,7 +11,7 @@ Objetivos
 
 - Desarrollar un modelo que pueda integrarse en futuras herramientas de diagnóstico.
 
-Para poder instalar las librerias necesarias, ejecutar la sigueinte linea desde la terminal de Python:
+Para poder instalar las librerias necesarias, ejecutar la siguiente linea desde la terminal de Python:
 - pip install -r requirements.txt
 
 
