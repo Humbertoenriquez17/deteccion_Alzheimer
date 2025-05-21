@@ -62,7 +62,7 @@ print("\nMatriz de confusión:\n", confusion_matrix(y_test, y_pred))
 print("\nReporte de clasificación:\n", classification_report(y_test, y_pred, zero_division=0))
 
 if f1 >= 0.91:
-    model.save('modelo_f1_91.h5')
+    model.save('modelo_f1_92.h5')
     print("Modelo guardado como modelo_f1_91.h5")
 
 plt.figure(figsize=(12,5))
