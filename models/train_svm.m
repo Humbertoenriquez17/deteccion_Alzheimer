@@ -1,9 +1,9 @@
 pkg load statistics;
 
-neg_train = csvread('c:\Users\humbe\Desktop\Adqui\Proyecto\Dataset_negativo_Train.csv');
-pos_train = csvread('C:\Users\humbe\Desktop\Adqui\Proyecto\Dataset_positivo_Train.csv');
-neg_test = csvread('c:\Users\humbe\Desktop\Adqui\Proyecto\Dataset_negativo_Test.csv');
-pos_test = csvread('c:\Users\humbe\Desktop\Adqui\Proyecto\Dataset_positivo_Test.csv');
+neg_train = csvread('../data/Dataset_negativo_Train.csv');
+pos_train = csvread('../data/Dataset_positivo_Train.csv');
+neg_test = csvread('../data/Dataset_negativo_Test.csv');
+pos_test = csvread('../data/Dataset_positivo_Test.csv');
 
 neg_train_labels = zeros(size(neg_train, 1), 1);
 pos_train_labels = ones(size(pos_train, 1), 1);
